@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preet's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Welcome to My Portfolio</h1>
+   <p class="tagline">A Glimpse into My Journey — Skills, Projects & More</p>
+ <br> 
+</header>
+
+  <main class="main">
+    <div class="buttons">
+      <button onclick="navigate('skill.html')">My Skills</button>
+      <button onclick="navigate('projects.html')">My Projects</button>
+      <button onclick="navigate('grades.html')">My Grades History</button>
+      <button onclick="navigate('achievements.html')">My Achievements</button>
+      <button onclick="navigate('thoughts.html')">My Thoughts</button>
+      <button onclick="navigate('contact.html')">Contact Me</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Preet's Portfolio | Crafted with ❤️</p>
+  </footer>
+
+  <script>
+    // Simple page navigation
+    function navigate(page) {
+      document.body.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = page;
+      }, 400); // Smooth transition delay
+    }
+
+    // Smooth fade-in animation on load
+    window.addEventListener('load', () => {
+      document.body.classList.add('fade-in');
+    });
+  </script>
+</body>
+</html>

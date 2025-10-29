@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Grades - Preet's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR (matches your style.css) -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <div class="nav-title">Preet's Portfolio</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="skill.html">My Skills</a></li>
+        <li><a href="grades.html" class="active">My Grades</a></li>
+        <li><a href="thoughts.html">My Thoughts</a></li>
+        <li><a href="projects.html">My Projects</a></li>
+        <li><a href="achievements.html">My Achievements</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-inner">
+    <!-- Page title -->
+    <section class="grades-section">
+      <h1 class="section-title">My Academic Journey</h1>
+
+      <!-- Horizontal timeline -->
+      <div class="horizontal-timeline">
+
+        <!-- Step 1: 10th -->
+        <div class="timeline-step">
+          <div class="circle"><span class="dot-label">10</span></div>
+          <div class="step-card">
+            <h3>BAPS-SVM Raysan (10th)</h3>
+            <p><strong>85%</strong></p>
+          </div>
+        </div>
+
+        <div class="timeline-separator"></div>
+
+        <!-- Step 2: 12th -->
+        <div class="timeline-step">
+          <div class="circle"><span class="dot-label">12</span></div>
+          <div class="step-card">
+            <h3>BAPS-SVM Raysan (12th)</h3>
+            <p><strong>75%</strong></p>
+          </div>
+        </div>
+
+        <div class="timeline-separator"></div>
+
+        <!-- Step 3: College (shows semesters + CGPA) -->
+        <div class="timeline-step">
+          <div class="circle"><span class="dot-label">C</span></div>
+          <div class="step-card step-card--large">
+            <h3>Government Engineering College, Modasa</h3>
+
+            <ul class="sem-list">
+              <li>Semester 1: <strong>8.87</strong></li>
+              <li>Semester 2: <strong>7.46</strong></li>
+              <li>Semester 3: <strong>7.65</strong></li>
+              <li>Semester 4: <strong>6.81</strong></li>
+              <li>Semester 5: <strong>8.13</strong></li>
+              <li>Semester 6: <strong>7.52</strong></li>
+            </ul>
+
+            <p class="cgpa"><strong>Current CGPA:</strong> 7.83</p>
+          </div>
+        </div>
+
+      </div> <!-- .horizontal-timeline -->
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Preet's Portfolio | Designed with ❤️</p>
+  </footer>
+
+  <script>
+    // fade-in (matches your style.css)
+    window.addEventListener('load', () => document.body.classList.add('fade-in'));
+  </script>
+</body>
+</html>
