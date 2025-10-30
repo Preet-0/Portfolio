@@ -9,9 +9,9 @@
 <body>
   <header class="header">
     <h1>Welcome to My Portfolio</h1>
-   <p class="tagline">A Glimpse into My Journey — Skills, Projects & More</p>
- <br> 
-</header>
+    <p class="tagline">A Glimpse into My Journey — Skills, Projects & More</p>
+    <br>
+  </header>
 
   <main class="main">
     <div class="buttons">
@@ -29,15 +29,13 @@
   </footer>
 
   <script>
-    // Simple page navigation
     function navigate(page) {
       document.body.classList.add('fade-out');
       setTimeout(() => {
         window.location.href = page;
-      }, 400); // Smooth transition delay
+      }, 400);
     }
 
-    // Smooth fade-in animation on load
     window.addEventListener('load', () => {
       document.body.classList.add('fade-in');
     });
