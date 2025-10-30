@@ -76,9 +76,21 @@
     <p>© 2025 Preet's Portfolio | Designed with ❤️</p>
   </footer>
 
+  
+<script>
+  const menu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  menu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menu.classList.toggle('open');
+  });
+</script>
+
   <script>
     window.addEventListener('load', () => document.body.classList.add('fade-in'));
   </script>
 </body>
 </html>
+
 
