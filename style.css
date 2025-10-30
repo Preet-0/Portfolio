@@ -1,4 +1,4 @@
-/* ---------- GLOBAL STYLE (applies to all pages) ---------- */
+/* ---------- GLOBAL STYLE ---------- */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -19,14 +19,16 @@ body.fade-out {
   opacity: 0;
 }
 
-/* ---------- HEADER (used on homepage) ---------- */
+/* ---------- HEADER ---------- */
 .header {
   text-align: center;
   margin-top: 60px;
+  padding: 0 20px;
 }
 .header h1 {
   font-size: 2.8rem;
   color: #0078d7;
+  word-wrap: break-word;
 }
 .header .tagline {
   font-size: 1.1rem;
@@ -34,18 +36,19 @@ body.fade-out {
   margin-top: 8px;
 }
 
-/* ---------- HOMEPAGE BUTTON SECTION ---------- */
+/* ---------- MAIN CONTENT ---------- */
 .main {
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 0;
+  padding: 60px 20px;
 }
 .buttons {
   display: grid;
   grid-template-columns: repeat(2, 250px);
-  grid-gap: 50px 80px; /* row gap, column gap */
+  grid-gap: 50px 80px;
+  justify-content: center;
 }
 button {
   padding: 20px 0;
@@ -58,11 +61,99 @@ button {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 120, 215, 0.2);
   transition: all 0.3s ease;
+  width: 100%;
+  max-width: 250px;
 }
 button:hover {
   transform: translateY(-5px);
   background-color: #409cf9;
   box-shadow: 0 6px 15px rgba(0, 120, 215, 0.3);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .header h1 {
+    font-size: 2.4rem;
+  }
+  .buttons {
+    grid-template-columns: repeat(2, 200px);
+    grid-gap: 40px 60px;
+  }
+  button {
+    font-size: 1rem;
+    padding: 16px 0;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+  .header {
+    margin-top: 40px;
+  }
+  .header h1 {
+    font-size: 2rem;
+  }
+  .header .tagline {
+    font-size: 1rem;
+  }
+  .main {
+    padding: 40px 10px;
+  }
+  .buttons {
+    grid-template-columns: 1fr;
+    grid-gap: 25px;
+  }
+  button {
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 14px 0;
+  }
+  footer {
+    font-size: 0.85rem;
+    padding: 15px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+  .header h1 {
+    font-size: 3.2rem;
+  }
+  .buttons {
+    grid-template-columns: repeat(3, 260px);
+    grid-gap: 60px 80px;
+  }
+}
+
+
+/* ---------- GLOBAL STYLE ---------- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafc;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+body.fade-out {
+  opacity: 0;
 }
 
 /* ---------- FIXED NAVBAR (PERFECTLY ALIGNED) ---------- */
@@ -73,21 +164,22 @@ button:hover {
   width: 100%;
   background-color: #e9f3ff;
   display: flex;
-  justify-content: center; /* centers the whole navbar content */
+  justify-content: center;
   align-items: center;
   padding: 12px 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
-/* Wrapper to hold logo and links together */
 .navbar-content {
   display: flex;
   align-items: center;
-  gap: 40px; /* 🔥 perfect distance between logo and Home */
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 20px;
 }
 
-/* Logo text */
 .nav-title {
   font-size: 1.2rem;
   font-weight: 700;
@@ -95,7 +187,6 @@ button:hover {
   white-space: nowrap;
 }
 
-/* Nav links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -103,6 +194,8 @@ button:hover {
   gap: 22px;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav-links li a {
@@ -130,7 +223,7 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 35px;
-  padding: 110px 60px 70px; /* adjusted top padding for navbar */
+  padding: 110px 60px 70px;
 }
 
 .skill-card {
@@ -169,66 +262,82 @@ footer {
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* ---------- RESPONSIVE TWEAKS ---------- */
-@media (max-width: 950px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 12px 25px;
-  }
+/* ---------- RESPONSIVE DESIGN ---------- */
 
-  .logo {
-    border-right: none;
-    margin-bottom: 10px;
+/* Tablets and small laptops */
+@media (max-width: 992px) {
+  .navbar-content {
+    flex-direction: column;
+    gap: 15px;
   }
 
   .nav-links {
-    flex-wrap: wrap;
-    gap: 12px;
+    gap: 14px;
   }
 
   .skills-container {
     padding: 100px 30px 60px;
     gap: 25px;
   }
+
+  .skill-card h2 {
+    font-size: 1.15rem;
+  }
+
+  .skill-card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+  .navbar-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-title {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-links li a {
+    font-size: 0.95rem;
+    padding: 7px 12px;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+    padding: 90px 20px 50px;
+    gap: 20px;
+  }
+
+  .skill-card {
+    padding: 20px;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 12px;
+  }
+}
+
+/* Large desktop screens */
+@media (min-width: 1400px) {
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 45px;
+    padding: 120px 80px 80px;
+  }
 }
 
 /* ---------- GRADES PAGE ---------- */
-.grades-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 100px 60px 60px;
-}
-
-.grade-card {
-  background-color: #f2f8ff;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0, 120, 215, 0.15);
-  padding: 25px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.grade-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 120, 215, 0.25);
-}
-
-.grade-card h2 {
-  color: #0078d7;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.grade-card p {
-  color: #333;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* ---------- GRADES PAGE (Flawless Timeline Layout) ---------- */
 .grades-section {
-  padding: 100px 40px;
+  padding: 110px 40px 90px;
   background: #f8fbff;
 }
 
@@ -237,134 +346,10 @@ footer {
   font-size: 2rem;
   font-weight: 700;
   color: #0078d7;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
-.timeline {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  background: #0078d7;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 2px;
-}
-
-.timeline-item {
-  position: relative;
-  width: 50%;
-  padding: 40px 40px;
-}
-
-.timeline-item:nth-child(odd) {
-  left: 0;
-  text-align: right;
-}
-
-.timeline-item:nth-child(even) {
-  left: 50%;
-  text-align: left;
-}
-
-.timeline-content {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 120, 215, 0.15);
-  position: relative;
-  display: inline-block;
-  max-width: 90%;
-}
-
-.timeline-content h2 {
-  color: #0078d7;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-
-.timeline-content ul {
-  list-style: none;
-  padding: 0;
-  margin: 8px 0;
-}
-
-.timeline-content li {
-  margin: 4px 0;
-  font-size: 1rem;
-  color: #333;
-}
-
-.cgpa {
-  font-weight: 700;
-  color: #0078d7;
-  margin-top: 10px;
-}
-
-/* --- Circle perfectly centered with the blue line --- */
-.timeline-item::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  background: #f8fbff;
-  border: 4px solid #0078d7;
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.timeline-item:nth-child(odd)::after {
-  right: -10px;
-}
-
-.timeline-item:nth-child(even)::after {
-  left: -10px;
-}
-
-/* --- Responsive (Mobile) --- */
-@media screen and (max-width: 768px) {
-  .timeline::after {
-    left: 30px;
-  }
-  .timeline-item {
-    width: 100%;
-    padding: 30px 0 30px 60px;
-    text-align: left;
-  }
-  .timeline-item::after {
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .timeline-content {
-    max-width: 100%;
-  }
-}
-/* ----------------- HORIZONTAL TIMELINE (grades) ----------------- */
-.grades-section {
-  padding: 90px 24px 80px;
-  background: #f8fbff;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #0078d7;
-  margin-bottom: 36px;
-}
-
-/* timeline container */
+/* ---------- HORIZONTAL TIMELINE ---------- */
 .horizontal-timeline {
   display: flex;
   align-items: center;
@@ -377,7 +362,6 @@ footer {
   margin: 0 auto;
 }
 
-/* small separator line between steps */
 .timeline-separator {
   flex: 1 1 40%;
   height: 4px;
@@ -386,7 +370,6 @@ footer {
   min-width: 40px;
 }
 
-/* each step */
 .timeline-step {
   display: flex;
   flex-direction: column;
@@ -395,10 +378,9 @@ footer {
   box-sizing: border-box;
 }
 
-/* circle/dot */
 .circle {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: #fff;
   border: 4px solid #0078d7;
@@ -412,14 +394,14 @@ footer {
 .circle .dot-label {
   color: #0078d7;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
-/* step card (below the circle) */
+/* step card */
 .step-card {
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,120,215,0.06);
+  box-shadow: 0 8px 20px rgba(0,120,215,0.08);
   padding: 16px 14px;
   margin-top: 14px;
   width: 100%;
@@ -427,9 +409,9 @@ footer {
 }
 
 .step-card h3 {
-  font-size: 1.03rem;
+  font-size: 1.05rem;
   color: #0078d7;
-  margin: 4px 0 8px;
+  margin: 6px 0 8px;
 }
 
 .step-card p {
@@ -438,10 +420,10 @@ footer {
   font-weight: 600;
 }
 
-/* larger card for college details */
+/* large college card */
 .step-card--large {
   text-align: left;
-  padding: 18px 18px;
+  padding: 20px 18px;
 }
 
 .sem-list {
@@ -450,12 +432,12 @@ footer {
   margin: 6px 0 10px;
   color: #333;
 }
+
 .sem-list li {
   margin: 6px 0;
   font-size: 0.98rem;
 }
 
-/* CGPA style */
 .cgpa {
   display: block;
   margin-top: 8px;
@@ -463,26 +445,64 @@ footer {
   font-weight: 700;
 }
 
-/* responsive: shrink & stack nicely */
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+/* tablets */
 @media (max-width: 980px) {
-  .horizontal-timeline { gap: 14px; padding: 12px; }
-  .timeline-separator { min-width: 24px; flex-basis: 20%; }
-  .timeline-step { width: 180px; }
+  .horizontal-timeline {
+    gap: 14px;
+    padding: 12px;
+  }
+  .timeline-separator {
+    min-width: 24px;
+    flex-basis: 20%;
+  }
+  .timeline-step {
+    width: 180px;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
 }
 
+/* mobile phones */
 @media (max-width: 720px) {
-  /* on small screens switch to vertical stacked timeline */
   .horizontal-timeline {
     flex-direction: column;
     align-items: center;
     gap: 18px;
     padding: 12px;
   }
-  .timeline-separator { width: 60%; height: 4px; }
-  .timeline-step { width: 92%; }
-  .step-card--large { text-align: left; }
+
+  .timeline-separator {
+    width: 60%;
+    height: 4px;
+  }
+
+  .timeline-step {
+    width: 92%;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  .step-card--large {
+    text-align: left;
+  }
 }
 
+/* large screens */
+@media (min-width: 1400px) {
+  .horizontal-timeline {
+    max-width: 1300px;
+    gap: 30px;
+  }
+  .timeline-step {
+    width: 240px;
+  }
+}
 
 /* ----------------- MY THOUGHTS SECTION ----------------- */
 .thoughts-section {
@@ -523,7 +543,46 @@ footer {
   font-weight: 700;
 }
 
+/* ---------------- RESPONSIVE MEDIA QUERIES ---------------- */
+@media (max-width: 1024px) {
+  .thoughts-box {
+    max-width: 90%;
+    padding: 25px 30px;
+    font-size: 1rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
 
+@media (max-width: 768px) {
+  .thoughts-section {
+    padding: 70px 16px 60px;
+  }
+  .thoughts-box {
+    max-width: 100%;
+    padding: 22px 20px;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thoughts-section {
+    padding: 60px 12px 50px;
+  }
+  .thoughts-box {
+    padding: 18px 16px;
+    font-size: 0.95rem;
+  }
+  .section-title {
+    font-size: 1.4rem;
+  }
+}
 
 /* ----------------- MY PROJECTS SECTION ----------------- */
 .project-section {
@@ -590,6 +649,66 @@ footer {
   background-color: #005aab;
 }
 
+/* ----------------- RESPONSIVE DESIGN ----------------- */
+@media (max-width: 1024px) {
+  .project-container {
+    gap: 25px;
+  }
+  .project-card {
+    padding: 26px 22px;
+  }
+  .project-card h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-section {
+    padding: 70px 16px 60px;
+  }
+  .project-container {
+    width: 100%;
+    gap: 20px;
+  }
+  .project-card {
+    padding: 22px 18px;
+    text-align: left;
+  }
+  .project-card p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+  .btn {
+    font-size: 0.9rem;
+    padding: 7px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .project-section {
+    padding: 60px 12px 50px;
+  }
+  .project-container {
+    gap: 16px;
+  }
+  .project-card {
+    padding: 18px 14px;
+    border-radius: 12px;
+  }
+  .project-card h2 {
+    font-size: 1.1rem;
+  }
+  .project-card p {
+    font-size: 0.93rem;
+  }
+  .btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+}
 
 /* ---------------- MY ACHIEVEMENTS SECTION ---------------- */
 .achievements-section {
@@ -624,18 +743,6 @@ footer {
   box-shadow: 0 12px 28px rgba(0, 120, 215, 0.15);
 }
 
-.badge {
-  position: absolute;
-  top: -12px;
-  left: 15px;
-  background: #0078d7;
-  color: #fff;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
 .achievement-card h2 {
   color: #222;
   font-size: 1.1rem;
@@ -658,6 +765,38 @@ footer {
   background-color: #005aab;
 }
 
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .achievement-container {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-card {
+    text-align: center;
+  }
+
+  .view-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .achievement-card h2 {
+    font-size: 1rem;
+  }
+
+  .view-btn {
+    font-size: 0.85rem;
+    padding: 7px 12px;
+  }
+}
 
 /* ---------------- CONTACT SECTION ---------------- */
 .contact-section {
@@ -674,6 +813,7 @@ footer {
   font-size: 1rem;
   max-width: 600px;
   margin-bottom: 50px;
+  line-height: 1.6;
 }
 
 .contact-container {
@@ -718,4 +858,49 @@ footer {
 
 .contact-card a:hover {
   text-decoration: underline;
+}
+
+/* ---------------- RESPONSIVENESS ---------------- */
+@media (max-width: 768px) {
+  .contact-intro {
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .contact-card {
+    text-align: center;
+    padding: 25px 15px;
+  }
+
+  .contact-card h2 {
+    font-size: 1rem;
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .contact-intro {
+    font-size: 0.9rem;
+  }
+
+  .contact-card a {
+    font-size: 0.9rem;
+  }
+
+  .contact-icon {
+    font-size: 1.8rem;
+  }
 }
