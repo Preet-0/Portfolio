@@ -7,22 +7,26 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="navbar-content">
-      <div class="nav-title">Preet's Portfolio</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="skill.html">My Skills</a></li>
-        <li><a href="grades.html">My Grades</a></li>
-        <li><a href="thoughts.html" class="active">My Thoughts</a></li>
-        <li><a href="projects.html">My Projects</a></li>
-        <li><a href="achievements.html">My Achievements</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
-      </ul>
+ <!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <div class="nav-title">Preet's Portfolio</div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </div>
-  </nav>
-
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="skill.html">My Skills</a></li>
+      <li><a href="grades.html">My Grades</a></li>
+      <li><a href="thoughts.html" class="active">My Thoughts</a></li>
+      <li><a href="projects.html">My Projects</a></li>
+      <li><a href="achievements.html">My Achievements</a></li>
+      <li><a href="contact.html">Contact Me</a></li>
+    </ul>
+  </div>
+</nav>
   <!-- MAIN CONTENT -->
   <main class="page-inner thoughts-section">
     <h1 class="section-title">My Thoughts</h1>
@@ -43,7 +47,18 @@
   </footer>
 
   <script>
+  const menu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  menu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menu.classList.toggle('open');
+  });
+</script>
+  
+  <script>
     window.addEventListener('load', () => document.body.classList.add('fade-in'));
   </script>
 </body>
 </html>
+
